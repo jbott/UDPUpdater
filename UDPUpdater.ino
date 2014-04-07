@@ -20,7 +20,7 @@ byte mac[] = {
   0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 IPAddress ip(192,168,1,82);
 
-IPAddress remote_ip(192,168,1,162);
+IPAddress remote_ip(192,168,1,81);
 int remote_port = 12001;
 
 // buffers for sending data
