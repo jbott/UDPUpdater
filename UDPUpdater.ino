@@ -4,11 +4,11 @@
 #include <IRremote.h>
 #include <PString.h>
 
-#define IR_PIN 4
-#define PIR_PIN 6
-#define PACKET_SIZE 128
-#define CYCLE_MAX 20000
-#define CYCLE_MOTION_REQUIRED 10000
+#define IR_PIN                   4
+#define PIR_PIN                  6
+#define PACKET_SIZE              128
+#define CYCLE_MAX                20000
+#define CYCLE_MOTION_REQUIRED    10000
 
 IRrecv irrecv(IR_PIN);
 
