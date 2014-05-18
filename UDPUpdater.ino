@@ -112,18 +112,21 @@ void loop() {
       cycle_cs_low = 0;
     }
     cycle_cs_high++;
+    
+    if (cycle_cs_high == CS_TOUCH_CYCLES_LONG_MIN) {
+      // Long Press
+      // Send here to get a more immediate response
+      Serial.println("Long Touch");
+      Udp.beginPacket(remote_ip, remote_port);
+      Udp.write(CSLongMessage);
+      Udp.endPacket();
+    }
   } else {
     cycle_cs_low++;
 
      // if touch ended
     if (cycle_cs_low > CS_TOUCH_ALLOWED_LOW && cycle_cs_high > CS_TOUCH_CYCLES_MIN) {
-      if (cycle_cs_high > CS_TOUCH_CYCLES_LONG_MIN) {
-        // Long Press
-        Serial.println("Long Touch");
-        Udp.beginPacket(remote_ip, remote_port);
-        Udp.write(CSLongMessage);
-        Udp.endPacket();
-      } else {
+      if (cycle_cs_high < CS_TOUCH_CYCLES_LONG_MIN) {
         // Short Press
         Serial.println("Touch");
         Udp.beginPacket(remote_ip, remote_port);
