@@ -13,12 +13,12 @@
 
 /* Configuration */
 #define PACKET_SIZE              128
-#define CYCLE_MAX                20000
-#define CYCLE_MOTION_REQUIRED    10000
+#define CYCLE_MAX                200
+#define CYCLE_MOTION_REQUIRED    100
 #define CS_TOUCH_MIN             100
-#define CS_TOUCH_CYCLES_MIN      10
+#define CS_TOUCH_CYCLES_MIN      5
 #define CS_TOUCH_CYCLES_LONG_MIN 80
-#define CS_TOUCH_ALLOWED_LOW     10
+#define CS_TOUCH_ALLOWED_LOW     5
 
 IRrecv irrecv(IR_PIN);
 CapacitiveSensor cs(CS_SEND_PIN, CS_RECV_PIN);
